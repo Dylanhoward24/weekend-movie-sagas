@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import './MovieList.css'
 
-function MovieList() {
+export default function MovieList() {
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -34,5 +34,3 @@ function MovieList() {
 
     );
 }
-
-export default MovieList;
