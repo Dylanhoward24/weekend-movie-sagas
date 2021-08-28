@@ -24,5 +24,14 @@
         [X] Add a header in the return section with a Link to Add Movie Page
     [X] Details Page
         [X] Add 'Back to List' button that will useHistory to return to "/"
+    [ ] Finish AddMovieForm
+        [ ] Use local state to capture values of the following inputs:
+            [ ] Input field for Movie Title
+            [ ] Input field for the URL
+            [ ] Input for the Movie Description
+            [ ] Dropdown with the list of Genres
+        [ ] Add a "Cancel" button that will useHistory to return to "/"
+        [ ] Add a "Save" button that will POST the input values to the DB and useHistory to return to "/"
+
 
         
