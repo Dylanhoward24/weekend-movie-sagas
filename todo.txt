@@ -1,29 +1,28 @@
 [ ] Finish adding features to an existing Movie App
-    [ ] Setup
-        [ ] Database
-            [ ] Create a DB in Postico named 'saga_movies_weekend'
-            [ ] Run the queries from 'database.sql' into the DB
-        [ ] Install Dependencies and get App running
-            [ ] Enter npm install into terminal
-            [ ] Enter killall node -9 into terminal
-            [ ] Enter npm run server into new terminal
-            [ ] Enter npm run client into new terminal
-    [ ] When movie poster is clicked, show users the details
-        [ ] Make a file/component named Details/Details.jsx
-            [ ] Setup the component to return "Under construction..."
+    [X] Setup
+        [X] Database
+            [X] Create a DB in Postico named 'saga_movies_weekend'
+            [X] Run the queries from 'database.sql' into the DB
+        [X] Install Dependencies and get App running
+            [X] Enter npm install into terminal
+            [X] Enter killall node -9 into terminal
+            [X] Enter npm run server into new terminal
+            [X] Enter npm run client into new terminal
+    [X] When movie poster is clicked, show users the details
+        [X] Make a file/component named Details/Details.jsx
+            [X] Setup the component to return "Under construction..."
       In App.js:
-        [ ] Import Details component
-        [ ] Add a Route to Details with path="/details"
+        [X] Import Details component
+        [X] Add a Route to Details with path="/details"
       In MovieList.jsx:
-        [ ] Add onClick to the <img/> and have that function useHistory
-            to navigate to "/details"
-    [ ] Have a way to get to the Add Movie Page
-        [ ] Make a file/component named AddMovieForm/AddMovieForm.jsx
-            [ ] Setup the component to return "Under construction..."
+        [X] Add onClick to the <img/> and have that function useHistory to navigate to "/details"
+    [X] Have a way to get to the Add Movie Page
+        [X] Make a file/component named AddMovieForm/AddMovieForm.jsx
+            [X] Setup the component to return "Under construction..."
       In App.js:
-        [ ] Add a Route to AddMovieForm with path="/addMovieForm"
-        [ ] Add a header in the return section with a Link to Add Movie Page
-    [ ] Details Page
-        [ ] Add 'Back to List' button that will useHistory to return to "/"
+        [X] Add a Route to AddMovieForm with path="/addMovieForm"
+        [X] Add a header in the return section with a Link to Add Movie Page
+    [X] Details Page
+        [X] Add 'Back to List' button that will useHistory to return to "/"
 
         
