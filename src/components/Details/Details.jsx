@@ -10,7 +10,14 @@ export default function Details() {
 
     return (
       <>
-        <p>{details.description}</p>
+        {details.map((detail, i) => (
+          <div key={i}>
+            <p>{detail.title}</p>
+            <img src={detail.poster}/>
+            {/* <p>{detail.genre}</p> */}
+            <p>{detail.description}</p>
+          </div>
+        ))}
         <button onClick={() => history.push('/')}>Back to List</button>
       </>
     );
