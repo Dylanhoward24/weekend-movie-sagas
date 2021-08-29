@@ -14,8 +14,8 @@ export default function Details() {
           <div key={i}>
             <p>{detail.title}</p>
             <img src={detail.poster}/>
-            {/* <p>{detail.genre}</p> */}
-            <p>{detail.description}</p>
+            <p>Genres: {detail.name}</p>
+            <p>Description: {detail.description}</p>
           </div>
         ))}
         <button onClick={() => history.push('/')}>Back to List</button>

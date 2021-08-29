@@ -23,9 +23,14 @@ router.get('/details/:id', (req, res) => {
     SELECT
       "movies"."title",
       "movies"."description",
-      "movies"."poster"
+      "movies"."poster",
+      "genres"."name"
     FROM "movies"
-    WHERE "id" = $1
+    JOIN "movies_genres"
+      ON "movies_genres"."movie_id" = "movies"."id"
+    JOIN "genres"
+      ON "genres"."id" = "movies_genres"."genre_id"
+    WHERE "movies"."id" = $1
   `;
   pool.query(query, [id])
     .then((dbRes) => {
