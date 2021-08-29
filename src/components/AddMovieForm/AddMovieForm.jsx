@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function AddMovieForm() {
+
+    // data from redux (genres reducer)
+    const genres = useSelector(store => store.genres);
+    console.log(genres);
 
     // allows us to use the 
     const history = useHistory();
     const dispatch = useDispatch();
 
     let [movieDetails, setMovieDetails] = useState({
-        title: '', poster: '', description: '', genre: ''
+        title: '', poster: '', description: '', genre: 0
     });
 
     const submitMovie = (event) => {
@@ -44,6 +48,11 @@ export default function AddMovieForm() {
             <select value={movieDetails.genre}
                 onChange={(event) => setMovieDetails({...movieDetails, genre: event.target.value})}>
                 <option disabled value='0'>Genre</option>
+                {genres.map((genre) => (
+                    <option key={genre.id} value={genre.id}>
+                        {genre.name}
+                    </option>
+                ))}
             </select>
             {/* this is our input button to save our form */}
             <input type="submit" value="Save"/>
