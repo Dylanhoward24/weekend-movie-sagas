@@ -11,7 +11,7 @@ function App() {
 
   // go get data from the server
   useEffect(() => {
-    dispatch({type: 'FETCH_GENRES' });
+    dispatch({ type: 'FETCH_GENRES' });
   });
 
   return (
