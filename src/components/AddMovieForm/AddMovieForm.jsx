@@ -8,7 +8,7 @@ export default function AddMovieForm() {
     const genres = useSelector(store => store.genres);
     // console.log(genres);
 
-    // allows us to use the 
+    // allows us to use the features we imported above
     const history = useHistory();
     const dispatch = useDispatch();
 
