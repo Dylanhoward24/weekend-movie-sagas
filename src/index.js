@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchMovies);
     yield takeEvery('FETCH_GENRES', fetchGenres);
+    yield takeEvery('ADD_MOVIE', addMovie);
 }
 
 function* fetchMovies() {
@@ -38,6 +39,16 @@ function* fetchGenres() {
     }
     catch(error) {
         console.log('Error getting genres', error);
+    }
+}
+
+function* addMovie(action) {
+    try {
+        yield axios.post('/api/movie', action.payload);
+        yield put({ type: 'FETCH_MOVIES' });
+    }
+    catch(error) {
+        console.log(error);
     }
 }
 

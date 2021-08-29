@@ -6,14 +6,14 @@ export default function AddMovieForm() {
 
     // data from redux (genres reducer)
     const genres = useSelector(store => store.genres);
-    console.log(genres);
+    // console.log(genres);
 
     // allows us to use the 
     const history = useHistory();
     const dispatch = useDispatch();
 
     let [movieDetails, setMovieDetails] = useState({
-        title: '', poster: '', description: '', genre: 0
+        title: '', poster: '', description: '', genre_id: 0
     });
 
     const submitMovie = (event) => {
@@ -22,9 +22,15 @@ export default function AddMovieForm() {
         console.log('new movie', movieDetails);
 
         dispatch({
-            type: 'NEW_MOVIE',
+            type: 'ADD_MOVIE',
             payload: movieDetails
         });
+        // then clear the input form
+        setMovieDetails({
+            title: '', poster: '', description: '', genre_id: 0
+        });
+        // then return to home page
+        history.push('/');
     }
 
     return (
@@ -45,8 +51,8 @@ export default function AddMovieForm() {
                 // change the value of movieDetails' property: description
                 onChange={(event) => setMovieDetails({...movieDetails, description: event.target.value})}
             />
-            <select value={movieDetails.genre}
-                onChange={(event) => setMovieDetails({...movieDetails, genre: event.target.value})}>
+            <select value={movieDetails.genre_id}
+                onChange={(event) => setMovieDetails({...movieDetails, genre_id: event.target.value})}>
                 <option disabled value='0'>Genre</option>
                 {genres.map((genre) => (
                     <option key={genre.id} value={genre.id}>
