@@ -14,7 +14,7 @@ export default function Details() {
           <div key={i}>
             <p>{detail.title}</p>
             <img src={detail.poster}/>
-            <p>Genres: {detail.name}</p>
+            <p>Genres: {detail.genres}</p>
             <p>Description: {detail.description}</p>
           </div>
         ))}

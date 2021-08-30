@@ -24,13 +24,14 @@ router.get('/details/:id', (req, res) => {
       "movies"."title",
       "movies"."description",
       "movies"."poster",
-      "genres"."name"
+    ARRAY_AGG("genres"."name") "genres"
     FROM "movies"
     JOIN "movies_genres"
       ON "movies_genres"."movie_id" = "movies"."id"
     JOIN "genres"
       ON "genres"."id" = "movies_genres"."genre_id"
     WHERE "movies"."id" = $1
+    GROUP BY "movies"."title", "movies"."description", "movies"."poster"
   `;
   pool.query(query, [id])
     .then((dbRes) => {
